@@ -19,7 +19,7 @@
     */
 
     for($i = 0; $i < 10; $i++){
-        echo "<p style='font-size: 10px;'> Najlepšia hodina na svete <br></p>";
+        echo "<p style='font-size: 20px;'> Najlepšia hodina na svete <br></p>";
     }
 
     //$mena = array("Peter", "Ján", "Lukáš");
