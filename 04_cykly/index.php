@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Karty a cykly</title>
 </head>
 <body>
     <?php
@@ -18,8 +18,26 @@
 
     */
 
-    for($i = 0; $i < 10; $i++){
-        echo "<p style='font-size: 20px;'> Najlepšia hodina na svete <br></p>";
+    $hodnoty = array_merge(range(2, 10), array("J", "Q", "K", "A"));
+    $znaky = array("♥", "♠", "♣", "♦");
+    $balicek = array();
+
+    foreach ($hodnoty as $hodnota) {
+        foreach ($znaky as $znak) {
+            $balicek[] = $hodnota . $znak;
+        }
+    }
+
+    shuffle($balicek);
+
+    for ($i = 0; $i <= 6; $i++) {
+        echo "<p><strong>Hráč " . ($i + 1) . ":</strong> ";
+
+        for ($karta = 0; $karta < 2; $karta++) {
+            echo array_pop($balicek) . " ";
+        }
+
+        echo "</p>";
     }
 
     //$mena = array("Peter", "Ján", "Lukáš");
